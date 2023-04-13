@@ -1,0 +1,268 @@
+<div style="width: 100%; height: 3vh; background-color: aqua;">
+
+<p style="text-align: center; color: antiquewhite; text-shadow: 2px 2px red;">Hospital managenment System </p>
+</div>
+<div class="container12">
+
+  <!-- login form -->
+  <div class="form">
+    <div class="form1">
+      <h3>{{message3}}</h3>
+      <h3 style="text-align: center; color: aqua;">Log In</h3>
+  <form  class="container"   [formGroup]="registerForm" (ngSubmit)="dologin()">
+    <div class="form-group">
+      <label class="label1" for="exampleInputEmail1">UserName<small class="req">*</small></label>
+      <input type="text"   class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter UserName" name="username"  formControlName="username">
+      <div style="margin-left: 21px;">
+      <div>
+      <small class="input" style="color: red;" *ngIf="UserName.errors?.['required'] && (UserName.touched || UserName.dirty)">UserName is required</small>
+    </div>
+    <div>
+      <small class="input" style="color: red;" *ngIf="UserName.errors?.['minlength'] && (UserName.touched || UserName.dirty)">UserName is too short</small>
+    </div>
+    <div>
+      <small class="input" style="color: red;" *ngIf="UserName.errors?.['pattern'] && (UserName.touched || UserName.dirty)">UserName should start with Alphabet</small>
+    </div>
+  </div>
+    </div>
+    <div class="form-group">
+      <label class="label1" for="exampleInputPassword1">Password<small class="req">*</small></label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your Password" name="password"formControlName="password">
+      <div style="margin-left: 21px;">
+      <small class="input" style="color: red;" *ngIf="Password.errors?.['required'] && (Password.touched || Password.dirty)">Password is required</small>
+    </div>
+    </div>
+  
+   
+    <!-- <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Login</button> -->
+
+    <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid" _ngcontent-jmq-c109="" _ngcontent-eyi-c98="" tabindex="0" fdprocessedid="os78ce" class="btn btn-outline-info btn-sm"><i _ngcontent-jmq-c109="" _ngcontent-eyi-c98="" class="fa fa-search"></i>&nbsp;Login</button>
+
+    <!-- Button trigger modal -->
+   <div class="box">
+    <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal">Create New User</a>
+
+ <a href="" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="margin-left: 23px;"> forget Password ?</a>
+</div>
+
+<!-------------------- create user ------------------>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  
+  <div class="modal-dialog">
+    <div class="modal-content " style="    width: 76vh;
+    border: 2px solid green;
+    border-radius: 16px;
+    
+    background-image: url(https://www.coderanch.com/templates/default/betaview/images/middle-bg.jpg);
+    color: antiquewhite;
+    
+">
+      <div class="modal-header ">
+       
+         <div><h4  class="modal-title" id="exampleModalLabel">Register</h4></div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span></button>
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> -->
+      </div>
+      
+
+      <!-- ------------ -->
+      <div style="    background: url(https://www.coderanch.com/templates/default/betaview/images/middle-bg.jpg);
+    " class="card ">
+      <form  [formGroup]="signUp" (ngSubmit)="getData()">
+        <div class="modal-body">
+          <div class="form-group">
+      <label for="">Name<small class="req">*</small></label>
+      <input type="text" class="container form-control" name="name" name="firstname" formControlName="name" >
+      <small class="input" style="color: red;" *ngIf="Name.errors?.['required'] && (Name.touched || Name.dirty)">User Name is required</small>
+      <small class="input" style="color: red;" *ngIf="Name.errors?.['minlength'] && (Name.touched || Name.dirty)">User Name is too short</small>
+      <small class="input" style="color: red;" *ngIf="Name.errors?.['pattern'] && (Name.touched || Name.dirty)">User Name should start with Alphabet</small>
+    </div>
+    <div class="form-group">
+      <label for="">Email<small class="req">*</small></label>
+      <input type="email" #email class="container form-control" name="email"  formControlName="email" >
+
+      <small class="input" style="color: red;" *ngIf="Email.errors?.['required'] && (Email.touched || Email.dirty)">Email is Required</small>
+      <small class="input" style="color: red;" *ngIf="Email.errors?.['email'] && (Email.touched || Email.dirty)">Email is invalid</small><br>
+    </div>
+     
+      <div class="form-group">
+        <label  for="">Phone No<small class="req">*</small></label>
+        <div class="row">
+      <div class="col col-7">
+      <input type="text" #mobile style="width: 18vw;" class="container  form-control" name="phone"  formControlName="phone">
+      <small class="input" style="color: red;" *ngIf="Phone.errors?.['required'] && (Phone.touched || Phone.dirty)">Phone No is Required</small>
+
+      <small class="input" style="color: red;" *ngIf="Phone.errors?.['pattern'] && (Phone.touched || Phone.dirty)">Phone No is invalid</small>
+
+      <small class="input" style="color: red;" *ngIf="Phone.errors?.['minlength'] && (Phone.touched || Phone.dirty)">Phone No is Short</small>
+
+      <small class="input" style="color: red;" *ngIf="Phone.errors?.['maxlength'] && (Phone.touched || Phone.dirty)">Phone No is Long</small>
+    </div>
+    <div *ngIf="enabelButton else elseblock" class="col col-3">
+      <button (click)="loginWithotp(email.value,mobile.value)" type="button" style="margin-top: -1px;
+      width: 145px;" class="btn btn-primary form-control" [disabled]="generateButton" >Generate Otp</button>
+    </div>
+    <ng-template #elseblock>
+      <div  class="col col-3">
+        <button (click)="loginWithotp(email.value,mobile.value)" type="button" style="margin-top: -1px;
+        width: 145px;" class="btn btn-primary form-control" >Resend Otp</button>
+        
+      </div>
+    </ng-template>
+
+    </div>
+    <div class="form-group"> <div>
+      <p   class="timer modal-title text-container" id="exampleModalLabel" *ngIf="otptimer" style=" color: rgb(240, 10, 221);margin-left: 22vw;">Resend Otp : {{display}}</p>
+    </div>
+  </div>
+      </div>
+
+      <div *ngIf="otp" class="form-group">
+        <div class="row">
+          <div class="col col-4">
+        <label  for="">Email Otp</label>
+      <input type="number" #emailOtp style="width: 10vw;" class="container  form-control" name="phone"  >
+    </div>
+          <div  class="col col-4">
+        <label  for="">Mobile Otp</label>
+      <input type="number" #phoneOtp  style="width: 10vw;" class="container  form-control" name="phone" >
+    </div>
+    <div class="col col-3">
+      <button (click)="otpVarify(emailOtp.value,phoneOtp.value)" type="button" style="margin-top: 31px;
+      width: 125px;
+      margin-left: 12px;" class="btn btn-primary form-control" >Submit Otp</button>
+    </div>
+    </div>
+      </div>
+<div *ngIf="pass">
+      <div  class="form-group">
+      <label for="">Password<small class="req">*</small></label>
+      <input type="password" class=" container form-control" class="form-control" name="password" formControlName="password">
+      <small class="input" style="color: red;" *ngIf="Password.errors?.['required'] && (Password.touched || Password.dirty)">Purpose is Required</small>
+    </div>
+    <div class="form-group">
+      <label for="">Confirm Password<small class="req">*</small></label>
+      <input type="text" class="container form-control"  name="conformpassword" formControlName="conformpassword">
+      <small class="input" style="color: red;" *ngIf="ConformPassword.errors?.['required'] && (ConformPassword.touched || ConformPassword.dirty)">Conform Purpose is Required</small>
+    </div>
+  </div>
+    </div>
+      <div class="modal-footer">
+        <button type="button" style="width: 9vw;" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <div *ngIf="pass">
+        <button type="reset" style="width: 7vw;" class="btn btn-danger">Reset</button>
+        <button  type="submit" [disabled]="signUp.invalid" class="btn btn-primary" style="width: 8vw;"  >Register</button>
+      </div>
+      </div>
+    </form>
+  </div>
+    </div>
+  </div>
+</div>
+     
+  </form>
+
+</div>
+
+ 
+</div>
+
+</div>
+
+
+<!-- ------------------------forget Password -->
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- <div style="color: red ; text-align: center;">{{message1}}</div> -->
+        <h5 class="modal-title fs-5" id="staticBackdropLabel">forget Password</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+      </div>
+      <form [formGroup]="reset" (ngSubmit)="generatedPassword()"  >
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="">Email<small class="req">*</small></label>
+          <input type="email" #email12 class="container form-control" name="email"  formControlName="email" >
+    
+          <small class="input" style="color: red;" *ngIf="Email1.errors?.['required'] && (Email1.touched || Email1.dirty)">Email is Required</small>
+          <small class="input" style="color: red;" *ngIf="Email1.errors?.['email'] && (Email1.touched || Email1.dirty)">Email is invalid</small><br>
+        </div>
+        <div  class="form-group ">
+         <div class="row">
+          <div *ngIf="otp" class="form-group">
+        <div *ngIf="otp2" class="row">
+          <div class="col col-4">
+        <label  for="">Email Otp</label>
+      <input type="number" #emailOtp style="width: 21vw;" class="container  form-control" name="phone"  >
+    </div>
+          <!-- <div  class="col col-4">
+        <label  for="">Mobile Otp</label>
+      <input type="number" #phoneOtp  style="width: 10vw;" class="container  form-control" name="phone" >
+    </div> -->
+    <div class="col col-3">
+      <button (click)="emailotpVarify(emailOtp.value)" type="button" style="margin-top: 31px;
+      width: 125px;
+      margin-left: 176px;" class="btn btn-primary form-control" >Submit Otp</button>
+    </div>
+    </div>
+      </div>
+          <div *ngIf="generateOtp">
+            <div *ngIf="enabelButton else elseblock" class="col col-3">
+              <button (click)="loginWithemailOtp(email12.value)" type="button" style="    margin-top: 3px;
+              width: 145px;
+              margin-left: 21vw;" class="btn btn-primary form-control" [disabled]="generateButton" >Generate Otp</button>
+            </div>
+            <ng-template #elseblock>
+              <div  class="col col-3">
+                <button (click)="loginWithemailOtp(email12.value)" type="button" style="margin-top: -1px;
+                width: 145px;" class="btn btn-primary form-control" >Resend Otp</button>
+                
+              </div>
+            </ng-template>
+          </div>
+        
+         </div>
+         
+
+          
+          
+    
+        </div>
+        <div *ngIf="otptimre1" class="form-group"> <div>
+          <p   class="timer modal-title text-container" id="exampleModalLabel" *ngIf="otptimer" style=" color: rgb(240, 10, 221);
+          margin-left: 21vw;
+          margin-top: -11px;">Resend Otp : {{display}}</p>
+        </div>
+        </div>
+        <div *ngIf="pass">
+        <div  class="form-group">
+          <label for="">Password<small class="req">*</small></label>
+          <input type="password" class=" container form-control" class="form-control" name="password" formControlName="password">
+          <small class="input" style="color: red;" *ngIf="Password2.errors?.['required'] && (Password2.touched || Password2.dirty)">Purpose is Required</small>
+        </div>
+        <div class="form-group">
+          <label for="">Confirm Password<small class="req">*</small></label>
+          <input type="text" class="container form-control"  name="conformpassword" formControlName="conformpassword">
+          <small class="input" style="color: red;" *ngIf="ConformPassword1.errors?.['required'] && (ConformPassword1.touched || ConformPassword1.dirty)">Conform Purpose is Required</small>
+        </div>
+      </div>
+
+      </div>
+      <div *ngIf="resetpassfooret" class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="reset" class="btn btn-danger">Reset</button>
+        <button type="submit" class="btn btn-primary" >Register</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+

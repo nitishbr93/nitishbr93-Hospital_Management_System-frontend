@@ -1,0 +1,34 @@
+<div class="container  my-10 mx-10">
+<form #basicform="ngForm">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Name</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="name" ngModel>
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Phone</label>
+      <input type="number" class="form-control" id="exampleInputPassword1" placeholder="phone no" name="phone" ngModel>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email" ngModel >
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" ngModel>
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="getData(basicform.value)">Submit</button>
+  </form>
+  <button (click)="getDataAll()">click</button>
+</div>
+
+
+<!-- <h4>{{userdata.name}}</h4>
+<h4>{{userdata.email}}</h4>
+<h4>{{userdata.role}}</h4>
+<h4>{{userdata.password}}</h4> -->

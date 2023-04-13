@@ -1,0 +1,17 @@
+<div class="form-group inner-addon right-addon">
+    <div class="input-group col-9 mx-auto">
+      <input name="password"
+          [type]="showPassword ? 'text' : 'password'"
+          class="form-control pwd-control"
+          id="password-field" placeholder="Password">
+      <div>
+        <i alt="show" class="bi bi-eye" 
+        (click)="showPassword = !showPassword"
+        [class.hide]="showPassword"></i>
+        <i alt="hide" class="far fa-eye-slash eye-hide" 
+        (click)="showPassword = !showPassword"
+        [class.hide]="!showPassword"></i>
+      </div>
+    </div>
+    <!-- <i class="bi bi-eye"></i> -->
+     

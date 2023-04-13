@@ -1,0 +1,39 @@
+/* 
+.label{
+    color: blue; 
+    margin-left: 10vw ;
+    font-style: italic;
+    font-size: bold;
+    font-size: 1.012rem;
+}
+.input{
+ margin-left: 10vw;
+ width: 20vw;
+ height: 3vh;
+}
+.male{
+    margin-left: 5px;
+}
+.gender{
+    margin-left: 10vw;
+}
+.req{
+    color: red;
+} 
+.main{
+    margin-top: 33px;
+    height: 50vw;
+} */
+
+
+.form-row{
+    width: 80vw;
+    margin-top: 10px;
+}
+span{
+    font-size: 2.34rem;
+    font-family: system-ui;
+    font-weight: 700;
+    text-shadow: 2px 2px yellowgreen;
+    margin-left: 30vw;
+}

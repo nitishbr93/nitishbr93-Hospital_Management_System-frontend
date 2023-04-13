@@ -1,0 +1,33 @@
+
+
+
+.form-row{
+    width: 70vw;
+    margin-top: 10px;
+}
+span{
+    font-size: 2.34rem;
+    font-family: system-ui;
+    font-weight: 700;
+    text-shadow: 2px 2px yellowgreen;
+    margin-left: 30vw;
+}
+.body{
+    background: url(https://www.coderanch.com/templates/default/betaview/images/middle-bg.jpg);
+}
+label{
+    color: aliceblue;
+}
+form{
+       border: 2px solid #d2691e47;
+       border-radius: 19px;
+       background-color: #513656a6;
+}
+.col-md-4{
+    margin-left: 53px;
+}
+.req{
+    color: red;
+    /* margin-bottom: 17px; */
+    font-size: 15px;
+}

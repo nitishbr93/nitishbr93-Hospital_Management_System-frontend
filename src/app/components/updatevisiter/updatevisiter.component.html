@@ -1,0 +1,141 @@
+<span class="container secondary ">Update Data</span>
+<div class="container border border-secondary "style="width: 58vw;">
+  <div>
+    <p style="text-align: center; color: red;">{{message}}</p>
+  </div>
+  <form (ngSubmit)="onSubmit()">
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="validationDefault01">First name</label>
+            <input type="text" class="form-control" id="validationDefault01" placeholder="First name" name="firstname" [(ngModel)]="users.firstname"  required >
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationDefault02">Last name</label>
+            <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" name="lastname"  [(ngModel)]="users.lastname"  required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="validationDefault03">Email</label>
+            <input type="email" class="form-control" id="validationDefault03" placeholder="Email"   [(ngModel)]="users.email" name="email"  required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationDefault04">Phone No</label>
+            <input type="text" class="form-control" id="validationDefault04" placeholder="phone no"  [(ngModel)]="users.phone" name="phone"  required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="validationDefault03">Gender</label>
+            <br>
+           <div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" id="inlineCheckbox1"  value="male" name="gender"  [(ngModel)]="users.gender" >
+  <label class="form-check-label" for="inlineCheckbox1">Male</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" id="inlineCheckbox2" [(ngModel)]="users.gender" name="gender" >
+  <label class="form-check-label" for="inlineCheckbox2">Female</label>
+</div>
+<div class="form-check form-check-inline">
+  <input class="form-check-input" type="radio" id="inlineCheckbox3"  value="other" [(ngModel)]="users.gender" name="gender" >
+  <label class="form-check-label" for="inlineCheckbox3">Other</label>
+</div>
+          </div>
+          <div class="col-md-2 mb-3">
+            <label for="validationDefault04">Age</label>
+            <input type="number" class="form-control" id="validationDefault04" placeholder="Enter your age"   [(ngModel)]="users.age" name="age"  required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="validationDefault03">State</label>
+            <select  class="form-control" id="validationDefault03" name="state" [(ngModel)]="users.state" >
+                <option selected>Select State</option>
+      <option value="Assam" name="state">Assam</option>
+      <option value="ArurachalPradesh" >Arurachal Pradesh</option> 
+      <option value="Bihar" >Bihar</option>
+      <option value="chatisgarh" >chatisgarh</option>
+      <option value="Chandigarh" >Chandigarh</option>
+      <option value="Delhi" >Delhi</option>
+      <option value="Hariyana" >Hariyana</option>
+      <option value="jharkhand" >jharkhand</option>
+      <option value="kerala" >kerala</option>
+      <option value="meghalaya" >meghalaya</option>
+      <option value="Manipur" >Manipur</option>
+      <option value="Nagaland" >Nagaland</option>
+      <option value="Odisha" >Odisha</option>
+      <option value="Punjab" >Punjab</option>
+      <option value="Rajsathan" >Rajsathan</option>
+      <option value="West Bengal" >west Bengal</option>
+      <option value="j & k" >west Bengal</option>
+      <option value="utarpradesh" >Uttar pradesh</option>
+      <option value="Uttarakhand" >Uttarakhand</option>
+      
+    </select>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationDefault04">City</label>
+            <input type="text" class="form-control" id="validationDefault04" placeholder="city"   [(ngModel)]="users.city" name="city" required>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          
+                <div class="col-md-6">
+                        <label for="validationDefault04">Address</label>
+                        <input type="text" class="form-control" id="validationDefault04" placeholder="Address"  [(ngModel)]="users.address" name="address"  required>
+                      
+          </div>
+        </div>
+
+        <div class="form-row">
+                <div class="col-md-3 mb-3">
+                  <label for="validationDefault03">Visiting Date & time</label>
+                  <input type="datetime-local" class="form-control" id="validationDefault03"   [(ngModel)]="users.visitingdate" name="visitingdate" required>
+                </div>
+                
+                <div class="col-md-3 mb-3">
+                  <label for="validationDefault04">Appointment date</label>
+                  <input type="date" class="form-control" id="validationDefault04" name="appointmentdate"  [(ngModel)]="users.appointmentdate"   required>
+                </div>
+                <div class="col-md-2 mb-3">
+                  <label for="validationDefault04">Appointment Time</label>
+                  <input type="time" class="form-control" id="validationDefault04" name="appointmenttime"  [(ngModel)]="users.appointmenttime"  required>
+                </div>
+              </div>
+             
+        <div class="form-row">
+                <div class="col-md-3 mb-3">
+                  <label for="validationDefault03">Purpose</label>
+                  <select  class="form-control" id="validationDefault03"    [(ngModel)]="users.purpose" name="purpose">
+                    <option selected>Select Purpose</option>
+                    <option value="Eye checkup"  >Eye checkup</option>
+                    <option value="Heart-problem"  >Heart-problem</option>
+                    <option value="frecture"  >frecture</option>
+                    <option value="General physicion"  >General physicion</option>
+                    <option value="Dental problem"  >Dental problem</option>
+        </select>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="validationDefault04">Assign Doctor</label>
+                  <input type="text" class="form-control" id="validationDefault04"  [(ngModel)]="users.doctor" name="doctor"  required>
+                </div>
+                <div class="col-md-2 mb-3">
+                  <label for="validationDefault04">fee Status</label>
+                  <br>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="inlineCheckbox4"  value="paid"  [(ngModel)]="users.fee" name="fee">
+                    <label class="form-check-label" for="inlineCheckbox4">paid</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" value="notpaid" type="radio" id="inlineCheckbox5" name="fee" [(ngModel)]="users.fee" name="fee">
+                    <label class="form-check-label" for="inlineCheckbox5">not paid</label>
+                  </div>
+                </div>
+              </div>
+
+
+        <button class="btn btn-primary" type="submit" >Submit form</button>
+      </form>
+</div>

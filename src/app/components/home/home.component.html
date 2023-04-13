@@ -1,0 +1,161 @@
+<!-- <h1>Home Page</h1> -->
+<div>
+    <div class="card-body px-5 py-5">
+        <h3 class="card-title text-left mb-3">Create Account</h3>
+        <div class="card login " style="border-radius: 0.55rem;box-shadow: 6px 4px 16px -11px rgb(0 0 0 / 50%);border: 1px solid #919191;">
+            <div class="card-body p-3">
+                <span class="notes" style="font-size: 0.85em"> <span class="fw-500">NOTES:</span>
+                    <ol class="ps-4 mb-1">
+                        <li>The Selection Test for Agniveervayu is only for <b>unmarried</b>
+                            MALE and FEMALE citizens of India.</li>
+                        <li>Only Indian Nationals are allowed.</li>
+                    </ol>
+                </span>
+            </div>
+        </div>
+        <form id="registrationForm" method="post" autocomplete="off" action="/avreg/candidate/showSignUp"><input type="hidden" name="_csrf" value="c22859d2-e717-49e4-a44e-af16a3bc0c4b">
+    
+    
+            
+    
+            <div class="form-group">
+                <label for="candidateName">Candidate Name <span style="color: red; font-size: 22px;">*</span></label> <input type="text" id="candidateName" required="required" placeholder="As Per 10th/Matriculation Passing Certificate" name="name" autofocus="autofocus" minlength="2" maxlength="50" class="form-control p_input" onkeypress="clearErrorBoxes()" value="" fdprocessedid="72kdc"> 
+                <div id="candidateNameError" style="color: red;"></div>
+            </div>
+            <!-- <div class="form-group">
+                <label for="parentName">Father's Name <span
+                    style="color: red; font-size: 22px;">*</span></label> <input
+                    type="text" id="parentName" required="required"
+                    placeholder="As Per 10th/Matriculation Passing Certificate"
+                    name="parentName" autofocus="autofocus" minlength="2"
+                    maxlength="50" class="form-control p_input"
+                    onkeypress="clearErrorBoxes()" th:field="*{parentName}">
+                <label style="color: red; font-size: 13px;"
+                    th:if="${#fields.hasErrors('parentName')}"
+                    th:errors="*{parentName}"></label>
+                <div id="parentNameError" style="color: red;"></div>
+            </div>
+            <div class="form-group">
+                <label for="motherName">Mother's Name <span
+                    style="color: red; font-size: 22px;">*</span></label> <input
+                    type="text" id="motherName" required="required"
+                    placeholder="As Per 10th/Matriculation Passing Certificate"
+                    name="motherName" autofocus="autofocus" minlength="2"
+                    maxlength="50" class="form-control p_input"
+                    onkeypress="clearErrorBoxes()" th:field="*{motherName}">
+                <label style="color: red; font-size: 13px;"
+                    th:if="${#fields.hasErrors('motherName')}"
+                    th:errors="*{motherName}"></label>
+                <div id="motherNameError" style="color: red;"></div>
+            </div> -->
+            <div class="form-group">
+                <label for="emailID">Email ID <span style="color: red; font-size: 22px;">*</span></label> <input type="text" id="emailID" required="required" placeholder="Enter Email ID" name="emailid" autofocus="autofocus" onkeypress="clearErrorBoxes()" pattern="^[a-zA-Z0-9._]+@[a-zA-Z.]+[a-zA-Z]{2,6}$" maxlength="60" class="form-control p_input" value="" fdprocessedid="r3i8yo"> 
+                <div id="emailIdError" style="color: red;"></div>
+            </div>
+    
+            <!-- <div class="form-group">
+                <label>Nationality</label> <select class="form-control"
+                    id="selectedNationality">
+                    <option value="0" disabled selected>--Select Nationality--</option>
+                    <option value="Indian">Indian</option>
+                    <option value="Nepalese">Nepalese</option>
+                </select>
+            </div> -->
+    
+            <!-- For Only Indian Nationality -->
+            <!-- <div class="form-group">
+                <label for="selectedNationality">Nationality <span
+                    style="color: red; font-size: 22px;">*</span></label> 
+                    <select class="form-control" id="selectedNationality"
+                    th:field="*{nationality}" disabled>
+                    <option value="Indian">Indian</option>
+                </select>
+                <div id="nationalityError" style="color: red;"></div>
+                <small>NOTE: Only Indian Nationality is allowed</small>
+            </div>
+    -->
+            <!-- <div class="form-group">
+                <label for="genderSelect">Gender <span
+                    style="color: red; font-size: 22px;">*</span></label> <select
+                    class="form-control" id="genderSelect" th:field="*{gender}">
+                    <option value="0" disabled selected>--Select Gender--</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+                <div id="genderError" style="color: red;"></div>
+            </div> -->
+    
+            <div class="form-group">
+                <label for="mobileNumber">Mobile Number <span style="color: red; font-size: 22px;">*</span></label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <select class="btn registerBtn" style="height: -moz-available; height: -webkit-fill-available;" id="selectCountryCode" name="mobileCode" fdprocessedid="129cre">
+                            <option value="91">+91</option>
+                            <!-- <option value="977">+977</option> -->
+                        </select>
+                    </div>
+                    <input type="text" class="form-control mx-1" id="mobileNumber" name="mobile" aria-label="Amount (to the nearest dollar)" placeholder="Fill Your Own Mobile Number Only" maxlength="10" required="required" onkeypress="clearErrorBoxes()" value="" fdprocessedid="twtj7m"> 
+                    <div class="input-group-append">
+                        <button class="btn btn-sm btn-primary" type="button" id="generateOtp" fdprocessedid="ez7lvd">Generate OTP</button>
+                    </div>
+                </div>
+                <div id="mobileNumberError" style="color: red;"></div>
+            </div>
+    
+            <div class="form-row">
+                <div class="col-sm">
+                    <div id="otpResendStatus" class="alert alert-info" style="display: none;">
+                        Generate OTP enable in <span id="resendCount">120</span>
+                        secs.
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="form-group col-lg-6">
+                    <label for="emailOtp">OTP on Email ID <span style="color: red; font-size: 22px;">*</span></label> <input type="password" id="emailOtp" placeholder="Enter Email OTP" name="emailOtp" autofocus="autofocus" maxlength="6" class="form-control p_input" value="" fdprocessedid="azk7y">
+                    
+                    <div id="emailOtpError"></div>
+                </div>
+    
+                <div class="form-group col-lg-6">
+                    <label>OTP on Mobile</label> <input type="password" id="mobileOtp" placeholder="Enter Mobile OTP" name="mobOtp" autofocus="autofocus" maxlength="6" class="form-control p_input" value="" fdprocessedid="rtejsd"> 
+                    <div id="mobileOtpError"></div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <label>Captcha <span style="color: red; font-size: 22px;">*</span></label>
+                <div class="col-lg-4  col-md-6 form-group">
+                    <img src="/avreg/candidate/captcha/img" id="captchaImage" class="figure-img img-fluid rounded float-left" alt="captcha-image" style="padding: 0.375rem 0; height: 45px">
+                </div>
+    
+                <div class="col-lg-2 col-md-6 form-group">
+                    <button type="button" class="btn btn-warning btn-icon-text" id="refreshCaptchaButton" style="height: 40px !important;" tabindex="-1">
+                        <i class="mdi mdi-reload btn-icon-prepend"></i>
+                    </button>
+                </div>
+    
+                <!-- <div class="col-lg-2 col-md-6 form-group">
+                        <button type="button" class="btn btn-warning btn-icon-text">
+                        <i class="mdi mdi-reload btn-icon-prepend"></i>
+                    </button>
+                </div> -->
+    
+                <div class="col-lg-6 col-md-12 form-group">
+                    <input type="text" name="Ctext" id="Cid" maxlength="5" class="valAlphaNum form-control p_input" placeholder="Enter Captcha" onkeypress="clearErrorBoxes()" fdprocessedid="cqg1nw">
+                    <div id="captchaError"></div>
+                </div>
+            </div>
+    
+            <div class="d-flex justify-content-between">
+                <!-- <button class="btn btn-danger enter-btn" id="reset">Reset</button> -->
+                <div style="float: right;">
+                    <a class="btn registerBtn btn-block enter-btn" href="/avreg/candidate/login">Log in</a>
+                </div>
+                <button class="btn btn-primary enter-btn text-end" style="float: right;" type="submit" id="signupSubmit" fdprocessedid="17vcsn">Register</button>
+            </div>
+    
+        </form>
+    </div>
+    

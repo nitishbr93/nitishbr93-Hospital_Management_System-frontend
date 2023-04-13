@@ -1,0 +1,58 @@
+.mat-drawer-inner-container{
+    width: 10vw;
+    color: white;
+    background-color: beige;
+}
+.icon{
+    margin-right: 10px;
+    color: #a99090;
+    font-size: 28px;
+}
+span{
+    color: #a99090;
+    font-size: 1.4rem;
+    margin-left: 8px;
+}
+.sidenav{
+    width: 13vw;
+    transform: none;
+    visibility: visible;
+    border-top: 1px
+    px
+     solid #b7b3d4;
+}
+a:hover{
+    background-color: black;
+    
+}
+a:active {
+    color: blue;
+}
+.name{
+    width: 5vw;
+    height: 3vw;
+    border: 1px solid red;
+    background-color: blue;
+}
+.spacemaker{
+    margin-left: 35vw;
+}
+a{
+    border-bottom: 2px solid #f1e9e999;
+    
+        /* background-image: url(https://www.coderanch.com/templates/default/betaview/images/sprite-guestbasic.png)!important;
+        width: 155px;
+        height: 41px;
+        padding: 13px 0;
+        background-position: 0 0; */
+    
+}
+/* a:active{
+} */
+a:current{
+    background-color: black;
+
+}
+
+
+

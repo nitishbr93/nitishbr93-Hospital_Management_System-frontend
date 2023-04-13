@@ -1,0 +1,62 @@
+
+.form{
+   width: 50vw;
+   height: 50vh;
+   
+  
+    
+}
+.container12{
+    width: 93vw;
+    height: 100vh;
+    background-color: yellow;
+    background-image: url("https://img.freepik.com/premium-vector/business-presentation-isometric-businessman-guy-giving-interview-conference-product-advertising-marketing-vector-illustration-manager-briefing-presentation-board-isometric_53562-13041.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.form1{
+    height: 52vh;
+    width: 38vw;
+    background-color: azure;
+    margin: 35px 167px;
+}
+
+label{
+    margin-left: 23px;
+}
+input{
+    width: 458px;
+}
+.label1{
+    margin-top: 12px;
+} 
+.form-control{
+    margin-left: 21px;
+}
+.button{
+    text-decoration: none;
+    font-size: .5rem;
+}
+.box{
+    margin-top: 35px;
+    margin-left: 32vh
+
+}
+.btn{
+    width: 11vw;
+    margin-left: 23px;
+    margin-top: 12px;
+}
+.req{
+    color: red;
+    font-size: 15px;
+}
+
+
+
